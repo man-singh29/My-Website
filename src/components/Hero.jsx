@@ -161,7 +161,7 @@ export default function Hero() {
               <div className="group relative w-full h-full rounded-3xl p-1.5 bg-gradient-to-b from-white/20 via-white/5 to-white/10 shadow-2xl backdrop-blur-sm overflow-hidden">
                 <div className="w-full h-full rounded-[22px] overflow-hidden bg-[#121318] relative">
                   <img
-                    src="/profile.jpeg"
+                    src="./profile.jpeg"
                     alt="Manish Singh - Computer Science Student & Android Developer"
                     className="w-full h-full object-cover object-center filter grayscale-[8%] contrast-[1.05] group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700 ease-out"
                     loading="eager"

@@ -89,8 +89,8 @@ export const achievement = {
   title: "CodeDay Bengaluru",
   date: "31 October 2026",
   description: "Secured third position at CodeDay Bengaluru, showcasing creativity, collaboration, and problem-solving through technology.",
-  certificatePdf: "/codeday_certificate.pdf",
-  eventPhoto: "/codeday_photo.jpeg"
+  certificatePdf: "./codeday_certificate.pdf",
+  eventPhoto: "./codeday_photo.jpeg"
 };
 
 export const experiences = [

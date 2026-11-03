@@ -1,28 +1,27 @@
 @echo off
 cd /d "%~dp0"
 echo ====================================================
-echo      Push Manish Singh Portfolio to GitHub
+echo      Updating and Pushing Portfolio to GitHub
 echo ====================================================
 echo.
-set /p REPO_URL="Enter your GitHub repository URL (e.g. https://github.com/man-singh29/portfolio.git): "
-if "%REPO_URL%"=="" (
-    echo No URL entered. Exiting...
-    pause
-    exit /b
-)
 
-echo.
-echo Adding remote origin: %REPO_URL%
-git remote remove origin 2>nul
-git remote add origin %REPO_URL%
-git branch -M main
+echo 1. Building production site with relative paths...
+call npm run build
 
-echo.
-echo Pushing code to GitHub...
-git push -u origin main
+echo 2. Updating /docs folder for GitHub Pages...
+if not exist docs mkdir docs
+xcopy /s /e /y dist\* docs\ >nul
+echo. > docs\.nojekyll
+
+echo 3. Staging and committing changes...
+git add .
+git commit -m "fix(github-pages): set relative base path and add compiled docs bundle"
+
+echo 4. Pushing to GitHub...
+git push origin main
 
 echo.
 echo ====================================================
-echo Done! Check your repository on GitHub.
+echo Update complete!
 echo ====================================================
 pause
